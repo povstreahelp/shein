@@ -164,7 +164,7 @@ function App() {
                 <div className="aspect-[3/4] rounded-xl overflow-hidden mb-4 relative bg-gray-100 shadow-md">
                   <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=600&auto=format&fit=crop" className="editorial-img w-full h-full object-cover" alt="Fashion" />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-500"></div>
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Shein_2021_logo.svg/800px-Shein_2021_logo.svg.png" className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 md:w-24 h-auto object-contain brightness-0 invert opacity-90 drop-shadow-lg" alt="SHEIN Logo" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Shein_Logo_2017.svg/1280px-Shein_Logo_2017.svg.png" className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 md:w-24 h-auto object-contain brightness-0 invert opacity-90 drop-shadow-lg" alt="SHEIN Logo" />
                   <div className="absolute bottom-4 left-4 text-white text-[9px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">Redeem</div>
                 </div>
                 <h4 className="text-sm font-medium">SHEIN</h4>
