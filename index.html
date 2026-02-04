@@ -85,6 +85,15 @@
         button {
             touch-action: manipulation;
         }
+        
+        /* Region Card */
+        .region-card {
+            transition: all 0.3s ease;
+        }
+        .region-card:active {
+            transform: scale(0.98);
+            background-color: #F9F7F2;
+        }
     </style>
 </head>
 <body class="bg-[#F9F7F2]">
@@ -93,7 +102,7 @@
     <main id="view-landing" class="view-section active min-h-screen relative flex flex-col">
         <nav class="absolute top-0 w-full p-6 md:p-8 flex justify-between items-center z-20">
             <div class="serif italic text-2xl text-charcoal tracking-wide">The Studio.</div>
-            <button onclick="transitionTo('marketplace')" class="py-2 text-xs uppercase tracking-[0.2em] font-medium hover:text-gold-muted transition-colors">Member Sign In</button>
+            <button onclick="transitionTo('region-select')" class="py-2 text-xs uppercase tracking-[0.2em] font-medium hover:text-gold-muted transition-colors">Member Sign In</button>
         </nav>
 
         <div class="flex-1 flex flex-col lg:flex-row h-full">
@@ -117,7 +126,7 @@
                     </p>
                     
                     <!-- Professional Mobile-Ready Button -->
-                    <button onclick="transitionTo('marketplace')" class="group relative w-full md:w-auto px-10 py-5 bg-charcoal text-white rounded-full overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 active:scale-[0.98]">
+                    <button onclick="transitionTo('region-select')" class="group relative w-full md:w-auto px-10 py-5 bg-charcoal text-white rounded-full overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 active:scale-[0.98]">
                         <span class="absolute inset-0 w-full h-full bg-white/10 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out"></span>
                         <div class="relative flex items-center justify-center space-x-3">
                             <span class="text-xs uppercase tracking-[0.25em] font-medium whitespace-nowrap">Enter The Studio</span>
@@ -129,8 +138,90 @@
         </div>
     </main>
 
-    <!-- VIEW 2: MARKETPLACE & STUDIO DASHBOARD -->
-    <main id="view-marketplace" class="view-section min-h-screen pb-20">
+    <!-- VIEW 2: REGION SELECTION (NEW) -->
+    <main id="view-region-select" class="view-section min-h-screen pb-20 hidden">
+        <header class="sticky top-0 z-40 glass-panel px-6 py-4 flex justify-between items-center">
+            <button onclick="transitionTo('landing')" class="flex items-center space-x-2 text-stone hover:text-charcoal transition-colors group p-2 -ml-2">
+                <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"></path></svg>
+                <span class="text-[10px] uppercase tracking-widest font-medium">Exit</span>
+            </button>
+            <div class="serif italic text-lg text-charcoal">The Studio.</div>
+        </header>
+
+        <div class="container mx-auto px-6 pt-8 md:pt-12 max-w-2xl">
+            <!-- Privacy Warning -->
+            <div class="bg-amber-50 border border-gold-muted/20 rounded-2xl p-6 mb-10 fade-in flex items-start gap-4 shadow-sm">
+                <svg class="w-5 h-5 text-gold-muted shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-charcoal mb-2">Private Access Warning</h3>
+                    <p class="text-[11px] text-stone leading-relaxed">
+                        This studio environment is invitation-only. If you have received this access link in error, please exit immediately. 
+                        <span class="font-medium text-charcoal">Sharing this link may result in permanent account suspension.</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mb-10 fade-in" style="animation-delay: 0.1s;">
+                <h2 class="text-3xl font-medium mb-3 text-charcoal">Select Region</h2>
+                <p class="text-stone font-light text-sm">Please confirm your current location to view available rewards.</p>
+                <div class="w-12 h-[1px] bg-gold-muted mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 fade-in" style="animation-delay: 0.2s;">
+                <!-- USA -->
+                <div onclick="transitionTo('marketplace')" class="region-card bg-white p-6 rounded-2xl border border-transparent hover:border-gold-muted/30 shadow-sm cursor-pointer flex items-center justify-between group">
+                    <div class="flex items-center gap-4">
+                        <span class="text-xl">🇺🇸</span>
+                        <span class="text-sm font-medium text-charcoal tracking-wide">United States</span>
+                    </div>
+                    <svg class="w-4 h-4 text-stone group-hover:text-gold-muted transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+                <!-- UK -->
+                <div onclick="transitionTo('marketplace')" class="region-card bg-white p-6 rounded-2xl border border-transparent hover:border-gold-muted/30 shadow-sm cursor-pointer flex items-center justify-between group">
+                    <div class="flex items-center gap-4">
+                        <span class="text-xl">🇬🇧</span>
+                        <span class="text-sm font-medium text-charcoal tracking-wide">United Kingdom</span>
+                    </div>
+                    <svg class="w-4 h-4 text-stone group-hover:text-gold-muted transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+                <!-- Europe -->
+                <div onclick="transitionTo('marketplace')" class="region-card bg-white p-6 rounded-2xl border border-transparent hover:border-gold-muted/30 shadow-sm cursor-pointer flex items-center justify-between group">
+                    <div class="flex items-center gap-4">
+                        <span class="text-xl">🇪🇺</span>
+                        <span class="text-sm font-medium text-charcoal tracking-wide">Europe</span>
+                    </div>
+                    <svg class="w-4 h-4 text-stone group-hover:text-gold-muted transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+                <!-- Canada -->
+                <div onclick="transitionTo('marketplace')" class="region-card bg-white p-6 rounded-2xl border border-transparent hover:border-gold-muted/30 shadow-sm cursor-pointer flex items-center justify-between group">
+                    <div class="flex items-center gap-4">
+                        <span class="text-xl">🇨🇦</span>
+                        <span class="text-sm font-medium text-charcoal tracking-wide">Canada</span>
+                    </div>
+                    <svg class="w-4 h-4 text-stone group-hover:text-gold-muted transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+                <!-- Australia -->
+                <div onclick="transitionTo('marketplace')" class="region-card bg-white p-6 rounded-2xl border border-transparent hover:border-gold-muted/30 shadow-sm cursor-pointer flex items-center justify-between group">
+                    <div class="flex items-center gap-4">
+                        <span class="text-xl">🇦🇺</span>
+                        <span class="text-sm font-medium text-charcoal tracking-wide">Australia</span>
+                    </div>
+                    <svg class="w-4 h-4 text-stone group-hover:text-gold-muted transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+                <!-- Other -->
+                <div onclick="transitionTo('marketplace')" class="region-card bg-white p-6 rounded-2xl border border-transparent hover:border-gold-muted/30 shadow-sm cursor-pointer flex items-center justify-between group">
+                    <div class="flex items-center gap-4">
+                        <span class="text-xl">🌍</span>
+                        <span class="text-sm font-medium text-charcoal tracking-wide">Global / Other</span>
+                    </div>
+                    <svg class="w-4 h-4 text-stone group-hover:text-gold-muted transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- VIEW 3: MARKETPLACE & STUDIO DASHBOARD -->
+    <main id="view-marketplace" class="view-section min-h-screen pb-20 hidden">
         <header class="sticky top-0 z-40 glass-panel px-6 py-4 flex justify-between items-center">
             <div class="serif italic text-lg text-charcoal">The Studio.</div>
             <div class="flex items-center space-x-6">
@@ -213,7 +304,7 @@
         </div>
     </main>
 
-    <!-- VIEW 3: BRAND BOUTIQUE (DYNAMIC) -->
+    <!-- VIEW 4: BRAND BOUTIQUE (DYNAMIC) -->
     <main id="view-brand-detail" class="view-section min-h-screen bg-white hidden">
         <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100 px-6 py-4 flex justify-between items-center">
             <button onclick="transitionTo('marketplace')" class="flex items-center space-x-2 text-stone hover:text-charcoal transition-colors group p-2 -ml-2">
@@ -246,7 +337,7 @@
         </div>
     </main>
 
-    <!-- VIEW 4: ELEGANT VERIFICATION OVERLAY -->
+    <!-- VIEW 5: ELEGANT VERIFICATION OVERLAY -->
     <div id="verification-overlay" class="fixed inset-0 z-50 hidden">
         <div class="absolute inset-0 bg-sand/80 backdrop-blur-xl transition-opacity duration-500" onclick="closeVerification()"></div>
         <div class="absolute inset-0 flex items-center justify-center p-6">
